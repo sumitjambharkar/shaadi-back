@@ -15,6 +15,10 @@ const razorpay = new Razorpay({
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Hey")
+});
+
 // Serving company logo
 app.get("/logo.png", (req, res) => {
   res.sendFile(path.join(__dirname, "logo.png"));
