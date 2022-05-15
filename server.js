@@ -1,5 +1,6 @@
 const app = require("express")();
 const path = require("path");
+require('dotenv').config()
 
 const Port = process.env.Port || 3001
 
@@ -9,8 +10,8 @@ const shortid = require("shortid");
 const Razorpay = require("razorpay");
 
 const razorpay = new Razorpay({
-  key_id: "rzp_test_dgT6dQaeQPEj6s",
-  key_secret: "rhijTfose58egyMhmQaMWObd",
+  key_id: process.env.KEY_ID,
+  key_secret: process.env.KEY_SECRET,
 });
 
 app.use(cors());
